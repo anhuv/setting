@@ -1,0 +1,17 @@
+#! /bin/bash
+apt-get update -y
+swapoff -a
+apt install - y python3-apt apt-transport-https software-properties-common conntrack apparmor libseccomp2 
+OS=xUbuntu_20.04
+VERSION=1.23
+echo $OS
+apt install curl -y
+echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS/ /" > /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
+echo "deb http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/$VERSION/$OS/ /" > /etc/apt/sources.list.d/devel:kubic:libcontainers:stable:cri-o:$VERSION.list
+
+curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/$VERSION/$OS/Release.key | apt-key add -
+curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS/Release.key | apt-key add -
+
+#apt install ca-certificates -y
+apt-get update -y
+apt-get install -y cri-o cri-o-runc
