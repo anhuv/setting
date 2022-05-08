@@ -1,0 +1,1058 @@
+Sunday 08 May 2022  21:41:21 +0700 (0:00:00.688)       0:04:44.329 ************ 
+ok: [node1]
+ok: [node2]
+ok: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/calico : Set fact calico_datastore to etcd if needed] ****************************************************************************************************************
+Sunday 08 May 2022  21:41:22 +0700 (0:00:00.255)       0:04:44.585 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/calico : Calico | Get kubelet hostname] ******************************************************************************************************************************
+Sunday 08 May 2022  21:41:22 +0700 (0:00:00.171)       0:04:44.756 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/calico : Calico | Gather os specific variables] **********************************************************************************************************************
+Sunday 08 May 2022  21:41:22 +0700 (0:00:00.216)       0:04:44.972 ************ 
+ok: [node1] => (item=/root/ver4/kubespray/roles/network_plugin/calico/vars/../vars/debian.yml)
+ok: [node2] => (item=/root/ver4/kubespray/roles/network_plugin/calico/vars/../vars/debian.yml)
+ok: [node3] => (item=/root/ver4/kubespray/roles/network_plugin/calico/vars/../vars/debian.yml)
+ok: [node4] => (item=/root/ver4/kubespray/roles/network_plugin/calico/vars/../vars/debian.yml)
+ok: [node5] => (item=/root/ver4/kubespray/roles/network_plugin/calico/vars/../vars/debian.yml)
+ok: [node6] => (item=/root/ver4/kubespray/roles/network_plugin/calico/vars/../vars/debian.yml)
+
+TASK [network_plugin/calico : Calico | Add wireguard yum repo] ****************************************************************************************************************************
+Sunday 08 May 2022  21:41:22 +0700 (0:00:00.226)       0:04:45.199 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/calico : include_tasks] **********************************************************************************************************************************************
+Sunday 08 May 2022  21:41:22 +0700 (0:00:00.144)       0:04:45.343 ************ 
+included: /root/ver4/kubespray/roles/network_plugin/calico/tasks/install.yml for node1, node2, node3, node4, node5, node6
+
+TASK [network_plugin/calico : Calico | Install Wireguard packages] ************************************************************************************************************************
+Sunday 08 May 2022  21:41:23 +0700 (0:00:00.282)       0:04:45.625 ************ 
+skipping: [node1] => (item=wireguard) 
+skipping: [node2] => (item=wireguard) 
+skipping: [node3] => (item=wireguard) 
+skipping: [node4] => (item=wireguard) 
+skipping: [node5] => (item=wireguard) 
+skipping: [node6] => (item=wireguard) 
+
+TASK [network_plugin/calico : Calico | Copy calicoctl binary from download dir] ***********************************************************************************************************
+Sunday 08 May 2022  21:41:23 +0700 (0:00:00.164)       0:04:45.790 ************ 
+ok: [node1]
+changed: [node4]
+ok: [node3]
+ok: [node2]
+changed: [node5]
+changed: [node6]
+
+TASK [network_plugin/calico : Calico | Write Calico cni config] ***************************************************************************************************************************
+Sunday 08 May 2022  21:41:24 +0700 (0:00:01.245)       0:04:47.035 ************ 
+ok: [node1]
+changed: [node4]
+changed: [node5]
+ok: [node2]
+ok: [node3]
+changed: [node6]
+
+TASK [network_plugin/calico : Calico | Create calico certs directory] *********************************************************************************************************************
+Sunday 08 May 2022  21:41:25 +0700 (0:00:01.385)       0:04:48.421 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/calico : Calico | Link etcd certificates for calico-node] ************************************************************************************************************
+Sunday 08 May 2022  21:41:26 +0700 (0:00:00.151)       0:04:48.573 ************ 
+skipping: [node1] => (item={'s': 'ca.pem', 'd': 'ca_cert.crt'}) 
+skipping: [node1] => (item={'s': 'node-node1.pem', 'd': 'cert.crt'}) 
+skipping: [node1] => (item={'s': 'node-node1-key.pem', 'd': 'key.pem'}) 
+skipping: [node2] => (item={'s': 'ca.pem', 'd': 'ca_cert.crt'}) 
+skipping: [node2] => (item={'s': 'node-node2.pem', 'd': 'cert.crt'}) 
+skipping: [node2] => (item={'s': 'node-node2-key.pem', 'd': 'key.pem'}) 
+skipping: [node3] => (item={'s': 'ca.pem', 'd': 'ca_cert.crt'}) 
+skipping: [node3] => (item={'s': 'node-node3.pem', 'd': 'cert.crt'}) 
+skipping: [node3] => (item={'s': 'node-node3-key.pem', 'd': 'key.pem'}) 
+skipping: [node4] => (item={'s': 'ca.pem', 'd': 'ca_cert.crt'}) 
+skipping: [node4] => (item={'s': 'node-node4.pem', 'd': 'cert.crt'}) 
+skipping: [node4] => (item={'s': 'node-node4-key.pem', 'd': 'key.pem'}) 
+skipping: [node5] => (item={'s': 'ca.pem', 'd': 'ca_cert.crt'}) 
+skipping: [node5] => (item={'s': 'node-node5.pem', 'd': 'cert.crt'}) 
+skipping: [node5] => (item={'s': 'node-node5-key.pem', 'd': 'key.pem'}) 
+skipping: [node6] => (item={'s': 'ca.pem', 'd': 'ca_cert.crt'}) 
+skipping: [node6] => (item={'s': 'node-node6.pem', 'd': 'cert.crt'}) 
+skipping: [node6] => (item={'s': 'node-node6-key.pem', 'd': 'key.pem'}) 
+
+TASK [network_plugin/calico : Calico | Generate typha certs] ******************************************************************************************************************************
+Sunday 08 May 2022  21:41:26 +0700 (0:00:00.213)       0:04:48.786 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/calico : Calico | Generate apiserver certs] **************************************************************************************************************************
+Sunday 08 May 2022  21:41:26 +0700 (0:00:00.168)       0:04:48.955 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/calico : Calico | Install calicoctl wrapper script] ******************************************************************************************************************
+Sunday 08 May 2022  21:41:26 +0700 (0:00:00.161)       0:04:49.116 ************ 
+changed: [node4]
+ok: [node1]
+changed: [node5]
+ok: [node2]
+ok: [node3]
+changed: [node6]
+
+TASK [network_plugin/calico : Calico | wait for etcd] *************************************************************************************************************************************
+Sunday 08 May 2022  21:41:27 +0700 (0:00:01.268)       0:04:50.384 ************ 
+skipping: [node1]
+
+TASK [network_plugin/calico : Calico | Check if calico network pool has already been configured] ******************************************************************************************
+Sunday 08 May 2022  21:41:27 +0700 (0:00:00.034)       0:04:50.419 ************ 
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+ok: [node1]
+
+TASK [network_plugin/calico : Calico | Ensure that calico_pool_cidr is within kube_pods_subnet when defined] ******************************************************************************
+Sunday 08 May 2022  21:41:28 +0700 (0:00:00.437)       0:04:50.857 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/calico : Calico | Check if calico IPv6 network pool has already been configured] *************************************************************************************
+Sunday 08 May 2022  21:41:28 +0700 (0:00:00.146)       0:04:51.003 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/calico : Calico | Ensure that calico_pool_cidr_ipv6 is within kube_pods_subnet_ipv6 when defined] ********************************************************************
+Sunday 08 May 2022  21:41:28 +0700 (0:00:00.156)       0:04:51.159 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/calico : Calico | Check if extra directory is needed] ****************************************************************************************************************
+Sunday 08 May 2022  21:41:28 +0700 (0:00:00.147)       0:04:51.307 ************ 
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+ok: [node1]
+
+TASK [network_plugin/calico : Calico | Set kdd path] **************************************************************************************************************************************
+Sunday 08 May 2022  21:41:29 +0700 (0:00:00.367)       0:04:51.675 ************ 
+ok: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/calico : Calico | Create calico manifests for kdd] *******************************************************************************************************************
+Sunday 08 May 2022  21:41:29 +0700 (0:00:00.161)       0:04:51.836 ************ 
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+ok: [node1]
+
+TASK [network_plugin/calico : Calico | Create Calico Kubernetes datastore resources] ******************************************************************************************************
+Sunday 08 May 2022  21:41:29 +0700 (0:00:00.452)       0:04:52.289 ************ 
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+ok: [node1]
+
+TASK [network_plugin/calico : Calico | Configure calico FelixConfiguration] ***************************************************************************************************************
+Sunday 08 May 2022  21:41:30 +0700 (0:00:01.035)       0:04:53.324 ************ 
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+changed: [node1]
+
+TASK [network_plugin/calico : Calico | Configure calico network pool] *********************************************************************************************************************
+Sunday 08 May 2022  21:41:31 +0700 (0:00:00.479)       0:04:53.804 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/calico : Calico | Configure calico ipv6 network pool] ****************************************************************************************************************
+Sunday 08 May 2022  21:41:31 +0700 (0:00:00.164)       0:04:53.969 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/calico : Populate Service External IPs] ******************************************************************************************************************************
+Sunday 08 May 2022  21:41:31 +0700 (0:00:00.155)       0:04:54.124 ************ 
+
+TASK [network_plugin/calico : Populate Service LoadBalancer IPs] **************************************************************************************************************************
+Sunday 08 May 2022  21:41:31 +0700 (0:00:00.034)       0:04:54.159 ************ 
+
+TASK [network_plugin/calico : Determine nodeToNodeMesh needed state] **********************************************************************************************************************
+Sunday 08 May 2022  21:41:31 +0700 (0:00:00.031)       0:04:54.191 ************ 
+skipping: [node1]
+
+TASK [network_plugin/calico : Calico | Set up BGP Configuration] **************************************************************************************************************************
+Sunday 08 May 2022  21:41:31 +0700 (0:00:00.037)       0:04:54.229 ************ 
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+ok: [node1]
+
+TASK [network_plugin/calico : Calico | Configure peering with router(s) at global scope] **************************************************************************************************
+Sunday 08 May 2022  21:41:32 +0700 (0:00:00.472)       0:04:54.701 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/calico : Calico | Configure peering with route reflectors at global scope] *******************************************************************************************
+Sunday 08 May 2022  21:41:32 +0700 (0:00:00.156)       0:04:54.857 ************ 
+
+TASK [network_plugin/calico : Calico | Configure route reflectors to peer with each other] ************************************************************************************************
+Sunday 08 May 2022  21:41:32 +0700 (0:00:00.152)       0:04:55.010 ************ 
+
+TASK [network_plugin/calico : Calico | Create calico manifests] ***************************************************************************************************************************
+Sunday 08 May 2022  21:41:32 +0700 (0:00:00.141)       0:04:55.151 ************ 
+skipping: [node2] => (item={'name': 'calico-config', 'file': 'calico-config.yml', 'type': 'cm'}) 
+skipping: [node2] => (item={'name': 'calico-node', 'file': 'calico-node.yml', 'type': 'ds'}) 
+skipping: [node2] => (item={'name': 'calico', 'file': 'calico-node-sa.yml', 'type': 'sa'}) 
+skipping: [node2] => (item={'name': 'calico', 'file': 'calico-cr.yml', 'type': 'clusterrole'}) 
+skipping: [node3] => (item={'name': 'calico-config', 'file': 'calico-config.yml', 'type': 'cm'}) 
+skipping: [node2] => (item={'name': 'calico', 'file': 'calico-crb.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node2] => (item={'name': 'kubernetes-services-endpoint', 'file': 'kubernetes-services-endpoint.yml', 'type': 'cm'}) 
+skipping: [node3] => (item={'name': 'calico-node', 'file': 'calico-node.yml', 'type': 'ds'}) 
+skipping: [node3] => (item={'name': 'calico', 'file': 'calico-node-sa.yml', 'type': 'sa'}) 
+skipping: [node3] => (item={'name': 'calico', 'file': 'calico-cr.yml', 'type': 'clusterrole'}) 
+skipping: [node4] => (item={'name': 'calico-config', 'file': 'calico-config.yml', 'type': 'cm'}) 
+skipping: [node4] => (item={'name': 'calico-node', 'file': 'calico-node.yml', 'type': 'ds'}) 
+skipping: [node3] => (item={'name': 'calico', 'file': 'calico-crb.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node3] => (item={'name': 'kubernetes-services-endpoint', 'file': 'kubernetes-services-endpoint.yml', 'type': 'cm'}) 
+skipping: [node4] => (item={'name': 'calico', 'file': 'calico-node-sa.yml', 'type': 'sa'}) 
+skipping: [node4] => (item={'name': 'calico', 'file': 'calico-cr.yml', 'type': 'clusterrole'}) 
+skipping: [node4] => (item={'name': 'calico', 'file': 'calico-crb.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node4] => (item={'name': 'kubernetes-services-endpoint', 'file': 'kubernetes-services-endpoint.yml', 'type': 'cm'}) 
+skipping: [node5] => (item={'name': 'calico-config', 'file': 'calico-config.yml', 'type': 'cm'}) 
+skipping: [node5] => (item={'name': 'calico-node', 'file': 'calico-node.yml', 'type': 'ds'}) 
+skipping: [node5] => (item={'name': 'calico', 'file': 'calico-node-sa.yml', 'type': 'sa'}) 
+skipping: [node5] => (item={'name': 'calico', 'file': 'calico-cr.yml', 'type': 'clusterrole'}) 
+skipping: [node5] => (item={'name': 'calico', 'file': 'calico-crb.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node5] => (item={'name': 'kubernetes-services-endpoint', 'file': 'kubernetes-services-endpoint.yml', 'type': 'cm'}) 
+skipping: [node6] => (item={'name': 'calico-config', 'file': 'calico-config.yml', 'type': 'cm'}) 
+skipping: [node6] => (item={'name': 'calico-node', 'file': 'calico-node.yml', 'type': 'ds'}) 
+skipping: [node6] => (item={'name': 'calico', 'file': 'calico-node-sa.yml', 'type': 'sa'}) 
+skipping: [node6] => (item={'name': 'calico', 'file': 'calico-cr.yml', 'type': 'clusterrole'}) 
+skipping: [node6] => (item={'name': 'calico', 'file': 'calico-crb.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node6] => (item={'name': 'kubernetes-services-endpoint', 'file': 'kubernetes-services-endpoint.yml', 'type': 'cm'}) 
+ok: [node1] => (item={'name': 'calico-config', 'file': 'calico-config.yml', 'type': 'cm'})
+ok: [node1] => (item={'name': 'calico-node', 'file': 'calico-node.yml', 'type': 'ds'})
+ok: [node1] => (item={'name': 'calico', 'file': 'calico-node-sa.yml', 'type': 'sa'})
+ok: [node1] => (item={'name': 'calico', 'file': 'calico-cr.yml', 'type': 'clusterrole'})
+ok: [node1] => (item={'name': 'calico', 'file': 'calico-crb.yml', 'type': 'clusterrolebinding'})
+ok: [node1] => (item={'name': 'kubernetes-services-endpoint', 'file': 'kubernetes-services-endpoint.yml', 'type': 'cm'})
+
+TASK [network_plugin/calico : Calico | Create calico manifests for typha] *****************************************************************************************************************
+Sunday 08 May 2022  21:41:36 +0700 (0:00:03.590)       0:04:58.742 ************ 
+skipping: [node1] => (item={'name': 'calico', 'file': 'calico-typha.yml', 'type': 'typha'}) 
+skipping: [node2] => (item={'name': 'calico', 'file': 'calico-typha.yml', 'type': 'typha'}) 
+skipping: [node3] => (item={'name': 'calico', 'file': 'calico-typha.yml', 'type': 'typha'}) 
+skipping: [node4] => (item={'name': 'calico', 'file': 'calico-typha.yml', 'type': 'typha'}) 
+skipping: [node5] => (item={'name': 'calico', 'file': 'calico-typha.yml', 'type': 'typha'}) 
+skipping: [node6] => (item={'name': 'calico', 'file': 'calico-typha.yml', 'type': 'typha'}) 
+
+TASK [network_plugin/calico : Calico | get calico apiserver caBundle] *********************************************************************************************************************
+Sunday 08 May 2022  21:41:36 +0700 (0:00:00.164)       0:04:58.907 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/calico : Calico | set calico apiserver caBundle fact] ****************************************************************************************************************
+Sunday 08 May 2022  21:41:36 +0700 (0:00:00.228)       0:04:59.136 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/calico : Calico | Create calico manifests for apiserver] *************************************************************************************************************
+Sunday 08 May 2022  21:41:36 +0700 (0:00:00.147)       0:04:59.283 ************ 
+skipping: [node1] => (item={'name': 'calico', 'file': 'calico-apiserver.yml', 'type': 'calico-apiserver'}) 
+skipping: [node2] => (item={'name': 'calico', 'file': 'calico-apiserver.yml', 'type': 'calico-apiserver'}) 
+skipping: [node3] => (item={'name': 'calico', 'file': 'calico-apiserver.yml', 'type': 'calico-apiserver'}) 
+skipping: [node4] => (item={'name': 'calico', 'file': 'calico-apiserver.yml', 'type': 'calico-apiserver'}) 
+skipping: [node5] => (item={'name': 'calico', 'file': 'calico-apiserver.yml', 'type': 'calico-apiserver'}) 
+skipping: [node6] => (item={'name': 'calico', 'file': 'calico-apiserver.yml', 'type': 'calico-apiserver'}) 
+
+TASK [network_plugin/calico : Start Calico resources] *************************************************************************************************************************************
+Sunday 08 May 2022  21:41:36 +0700 (0:00:00.167)       0:04:59.451 ************ 
+skipping: [node2] => (item=calico-config.yml) 
+skipping: [node2] => (item=calico-node.yml) 
+skipping: [node2] => (item=calico-node-sa.yml) 
+skipping: [node2] => (item=calico-cr.yml) 
+skipping: [node2] => (item=calico-crb.yml) 
+skipping: [node2] => (item=kubernetes-services-endpoint.yml) 
+skipping: [node2] => (item=calico-typha.yml) 
+skipping: [node3] => (item=calico-config.yml) 
+skipping: [node3] => (item=calico-node.yml) 
+skipping: [node3] => (item=calico-node-sa.yml) 
+skipping: [node3] => (item=calico-cr.yml) 
+skipping: [node3] => (item=calico-crb.yml) 
+skipping: [node3] => (item=kubernetes-services-endpoint.yml) 
+skipping: [node3] => (item=calico-typha.yml) 
+skipping: [node4] => (item=calico-config.yml) 
+skipping: [node4] => (item=calico-node.yml) 
+skipping: [node4] => (item=calico-node-sa.yml) 
+skipping: [node4] => (item=calico-cr.yml) 
+skipping: [node5] => (item=calico-config.yml) 
+skipping: [node4] => (item=calico-crb.yml) 
+skipping: [node5] => (item=calico-node.yml) 
+skipping: [node5] => (item=calico-node-sa.yml) 
+skipping: [node5] => (item=calico-cr.yml) 
+skipping: [node4] => (item=kubernetes-services-endpoint.yml) 
+skipping: [node4] => (item=calico-typha.yml) 
+skipping: [node5] => (item=calico-crb.yml) 
+skipping: [node5] => (item=kubernetes-services-endpoint.yml) 
+skipping: [node5] => (item=calico-typha.yml) 
+skipping: [node6] => (item=calico-config.yml) 
+skipping: [node6] => (item=calico-node.yml) 
+skipping: [node6] => (item=calico-node-sa.yml) 
+skipping: [node6] => (item=calico-cr.yml) 
+skipping: [node6] => (item=calico-crb.yml) 
+skipping: [node6] => (item=kubernetes-services-endpoint.yml) 
+skipping: [node6] => (item=calico-typha.yml) 
+ok: [node1] => (item=calico-config.yml)
+ok: [node1] => (item=calico-node.yml)
+ok: [node1] => (item=calico-node-sa.yml)
+ok: [node1] => (item=calico-cr.yml)
+ok: [node1] => (item=calico-crb.yml)
+ok: [node1] => (item=kubernetes-services-endpoint.yml)
+skipping: [node1] => (item=calico-typha.yml) 
+
+TASK [network_plugin/calico : Start Calico apiserver resources] ***************************************************************************************************************************
+Sunday 08 May 2022  21:41:40 +0700 (0:00:03.041)       0:05:02.493 ************ 
+skipping: [node1] => (item=calico-apiserver.yml) 
+skipping: [node2] => (item=calico-apiserver.yml) 
+skipping: [node3] => (item=calico-apiserver.yml) 
+skipping: [node4] => (item=calico-apiserver.yml) 
+skipping: [node5] => (item=calico-apiserver.yml) 
+skipping: [node6] => (item=calico-apiserver.yml) 
+
+TASK [network_plugin/calico : Wait for calico kubeconfig to be created] *******************************************************************************************************************
+Sunday 08 May 2022  21:41:40 +0700 (0:00:00.165)       0:05:02.659 ************ 
+skipping: [node1]
+ok: [node3]
+ok: [node2]
+ok: [node6]
+ok: [node4]
+ok: [node5]
+
+TASK [network_plugin/calico : Calico | Configure node asNumber for per node peering] ******************************************************************************************************
+Sunday 08 May 2022  21:46:23 +0700 (0:04:42.925)       0:09:45.584 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/calico : Calico | Configure peering with router(s) at node scope] ****************************************************************************************************
+Sunday 08 May 2022  21:46:23 +0700 (0:00:00.164)       0:09:45.748 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/calico : Calico | Configure ipam strictaffinity] *********************************************************************************************************************
+Sunday 08 May 2022  21:46:23 +0700 (0:00:00.268)       0:09:46.016 ************ 
+changed: [node1]
+changed: [node2]
+changed: [node5]
+changed: [node4]
+changed: [node3]
+changed: [node6]
+
+TASK [network_plugin/cni : CNI | make sure /opt/cni/bin exists] ***************************************************************************************************************************
+Sunday 08 May 2022  21:46:24 +0700 (0:00:01.028)       0:09:47.045 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/cni : CNI | Copy cni plugins] ****************************************************************************************************************************************
+Sunday 08 May 2022  21:46:24 +0700 (0:00:00.146)       0:09:47.191 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/flannel : Flannel | Create Flannel manifests] ************************************************************************************************************************
+Sunday 08 May 2022  21:46:24 +0700 (0:00:00.222)       0:09:47.414 ************ 
+skipping: [node1] => (item={'name': 'flannel', 'file': 'cni-flannel-rbac.yml', 'type': 'sa'}) 
+skipping: [node1] => (item={'name': 'kube-flannel', 'file': 'cni-flannel.yml', 'type': 'ds'}) 
+skipping: [node2] => (item={'name': 'flannel', 'file': 'cni-flannel-rbac.yml', 'type': 'sa'}) 
+skipping: [node2] => (item={'name': 'kube-flannel', 'file': 'cni-flannel.yml', 'type': 'ds'}) 
+skipping: [node3] => (item={'name': 'flannel', 'file': 'cni-flannel-rbac.yml', 'type': 'sa'}) 
+skipping: [node3] => (item={'name': 'kube-flannel', 'file': 'cni-flannel.yml', 'type': 'ds'}) 
+skipping: [node4] => (item={'name': 'flannel', 'file': 'cni-flannel-rbac.yml', 'type': 'sa'}) 
+skipping: [node4] => (item={'name': 'kube-flannel', 'file': 'cni-flannel.yml', 'type': 'ds'}) 
+skipping: [node5] => (item={'name': 'flannel', 'file': 'cni-flannel-rbac.yml', 'type': 'sa'}) 
+skipping: [node5] => (item={'name': 'kube-flannel', 'file': 'cni-flannel.yml', 'type': 'ds'}) 
+skipping: [node6] => (item={'name': 'flannel', 'file': 'cni-flannel-rbac.yml', 'type': 'sa'}) 
+skipping: [node6] => (item={'name': 'kube-flannel', 'file': 'cni-flannel.yml', 'type': 'ds'}) 
+
+TASK [network_plugin/cni : CNI | make sure /opt/cni/bin exists] ***************************************************************************************************************************
+Sunday 08 May 2022  21:46:25 +0700 (0:00:00.243)       0:09:47.657 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/cni : CNI | Copy cni plugins] ****************************************************************************************************************************************
+Sunday 08 May 2022  21:46:25 +0700 (0:00:00.157)       0:09:47.815 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/weave : Weave | Create manifest] *************************************************************************************************************************************
+Sunday 08 May 2022  21:46:25 +0700 (0:00:00.217)       0:09:48.032 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/weave : Weave | Fix nodePort for Weave] ******************************************************************************************************************************
+Sunday 08 May 2022  21:46:25 +0700 (0:00:00.152)       0:09:48.185 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/canal : Canal | Write Canal cni config] ******************************************************************************************************************************
+Sunday 08 May 2022  21:46:25 +0700 (0:00:00.235)       0:09:48.420 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/canal : Canal | Create canal certs directory] ************************************************************************************************************************
+Sunday 08 May 2022  21:46:26 +0700 (0:00:00.154)       0:09:48.575 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/canal : Canal | Link etcd certificates for canal-node] ***************************************************************************************************************
+Sunday 08 May 2022  21:46:26 +0700 (0:00:00.149)       0:09:48.725 ************ 
+skipping: [node1] => (item={'s': 'ca.pem', 'd': 'ca_cert.crt'}) 
+skipping: [node1] => (item={'s': 'node-node1.pem', 'd': 'cert.crt'}) 
+skipping: [node1] => (item={'s': 'node-node1-key.pem', 'd': 'key.pem'}) 
+skipping: [node2] => (item={'s': 'ca.pem', 'd': 'ca_cert.crt'}) 
+skipping: [node2] => (item={'s': 'node-node2.pem', 'd': 'cert.crt'}) 
+skipping: [node2] => (item={'s': 'node-node2-key.pem', 'd': 'key.pem'}) 
+skipping: [node3] => (item={'s': 'ca.pem', 'd': 'ca_cert.crt'}) 
+skipping: [node3] => (item={'s': 'node-node3.pem', 'd': 'cert.crt'}) 
+skipping: [node3] => (item={'s': 'node-node3-key.pem', 'd': 'key.pem'}) 
+skipping: [node4] => (item={'s': 'ca.pem', 'd': 'ca_cert.crt'}) 
+skipping: [node4] => (item={'s': 'node-node4.pem', 'd': 'cert.crt'}) 
+skipping: [node4] => (item={'s': 'node-node4-key.pem', 'd': 'key.pem'}) 
+skipping: [node5] => (item={'s': 'ca.pem', 'd': 'ca_cert.crt'}) 
+skipping: [node5] => (item={'s': 'node-node5.pem', 'd': 'cert.crt'}) 
+skipping: [node5] => (item={'s': 'node-node5-key.pem', 'd': 'key.pem'}) 
+skipping: [node6] => (item={'s': 'ca.pem', 'd': 'ca_cert.crt'}) 
+skipping: [node6] => (item={'s': 'node-node6.pem', 'd': 'cert.crt'}) 
+skipping: [node6] => (item={'s': 'node-node6-key.pem', 'd': 'key.pem'}) 
+
+TASK [network_plugin/canal : Canal | Set Flannel etcd configuration] **********************************************************************************************************************
+Sunday 08 May 2022  21:46:26 +0700 (0:00:00.228)       0:09:48.954 ************ 
+skipping: [node1]
+
+TASK [network_plugin/canal : Canal | Create canal node manifests] *************************************************************************************************************************
+Sunday 08 May 2022  21:46:26 +0700 (0:00:00.033)       0:09:48.987 ************ 
+skipping: [node1] => (item={'name': 'canal-config', 'file': 'canal-config.yaml', 'type': 'cm'}) 
+skipping: [node1] => (item={'name': 'canal-node', 'file': 'canal-node.yaml', 'type': 'ds'}) 
+skipping: [node1] => (item={'name': 'canal', 'file': 'canal-node-sa.yml', 'type': 'sa'}) 
+skipping: [node1] => (item={'name': 'calico', 'file': 'canal-cr-calico.yml', 'type': 'clusterrole'}) 
+skipping: [node1] => (item={'name': 'flannel', 'file': 'canal-cr-flannel.yml', 'type': 'clusterrole'}) 
+skipping: [node1] => (item={'name': 'canal-calico', 'file': 'canal-crb-calico.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node1] => (item={'name': 'canal-flannel', 'file': 'canal-crb-flannel.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node2] => (item={'name': 'canal-config', 'file': 'canal-config.yaml', 'type': 'cm'}) 
+skipping: [node2] => (item={'name': 'canal-node', 'file': 'canal-node.yaml', 'type': 'ds'}) 
+skipping: [node2] => (item={'name': 'canal', 'file': 'canal-node-sa.yml', 'type': 'sa'}) 
+skipping: [node2] => (item={'name': 'calico', 'file': 'canal-cr-calico.yml', 'type': 'clusterrole'}) 
+skipping: [node2] => (item={'name': 'flannel', 'file': 'canal-cr-flannel.yml', 'type': 'clusterrole'}) 
+skipping: [node2] => (item={'name': 'canal-calico', 'file': 'canal-crb-calico.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node2] => (item={'name': 'canal-flannel', 'file': 'canal-crb-flannel.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node3] => (item={'name': 'canal-config', 'file': 'canal-config.yaml', 'type': 'cm'}) 
+skipping: [node3] => (item={'name': 'canal-node', 'file': 'canal-node.yaml', 'type': 'ds'}) 
+skipping: [node3] => (item={'name': 'canal', 'file': 'canal-node-sa.yml', 'type': 'sa'}) 
+skipping: [node3] => (item={'name': 'calico', 'file': 'canal-cr-calico.yml', 'type': 'clusterrole'}) 
+skipping: [node3] => (item={'name': 'flannel', 'file': 'canal-cr-flannel.yml', 'type': 'clusterrole'}) 
+skipping: [node3] => (item={'name': 'canal-calico', 'file': 'canal-crb-calico.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node3] => (item={'name': 'canal-flannel', 'file': 'canal-crb-flannel.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node4] => (item={'name': 'canal-config', 'file': 'canal-config.yaml', 'type': 'cm'}) 
+skipping: [node4] => (item={'name': 'canal-node', 'file': 'canal-node.yaml', 'type': 'ds'}) 
+skipping: [node4] => (item={'name': 'canal', 'file': 'canal-node-sa.yml', 'type': 'sa'}) 
+skipping: [node4] => (item={'name': 'calico', 'file': 'canal-cr-calico.yml', 'type': 'clusterrole'}) 
+skipping: [node4] => (item={'name': 'flannel', 'file': 'canal-cr-flannel.yml', 'type': 'clusterrole'}) 
+skipping: [node4] => (item={'name': 'canal-calico', 'file': 'canal-crb-calico.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node4] => (item={'name': 'canal-flannel', 'file': 'canal-crb-flannel.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node5] => (item={'name': 'canal-config', 'file': 'canal-config.yaml', 'type': 'cm'}) 
+skipping: [node5] => (item={'name': 'canal-node', 'file': 'canal-node.yaml', 'type': 'ds'}) 
+skipping: [node5] => (item={'name': 'canal', 'file': 'canal-node-sa.yml', 'type': 'sa'}) 
+skipping: [node5] => (item={'name': 'calico', 'file': 'canal-cr-calico.yml', 'type': 'clusterrole'}) 
+skipping: [node5] => (item={'name': 'flannel', 'file': 'canal-cr-flannel.yml', 'type': 'clusterrole'}) 
+skipping: [node5] => (item={'name': 'canal-calico', 'file': 'canal-crb-calico.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node5] => (item={'name': 'canal-flannel', 'file': 'canal-crb-flannel.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node6] => (item={'name': 'canal-config', 'file': 'canal-config.yaml', 'type': 'cm'}) 
+skipping: [node6] => (item={'name': 'canal-node', 'file': 'canal-node.yaml', 'type': 'ds'}) 
+skipping: [node6] => (item={'name': 'canal', 'file': 'canal-node-sa.yml', 'type': 'sa'}) 
+skipping: [node6] => (item={'name': 'calico', 'file': 'canal-cr-calico.yml', 'type': 'clusterrole'}) 
+skipping: [node6] => (item={'name': 'flannel', 'file': 'canal-cr-flannel.yml', 'type': 'clusterrole'}) 
+skipping: [node6] => (item={'name': 'canal-calico', 'file': 'canal-crb-calico.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node6] => (item={'name': 'canal-flannel', 'file': 'canal-crb-flannel.yml', 'type': 'clusterrolebinding'}) 
+
+TASK [network_plugin/canal : Canal | Install calicoctl wrapper script] ********************************************************************************************************************
+Sunday 08 May 2022  21:46:26 +0700 (0:00:00.277)       0:09:49.264 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/canal : Canal | Create network policy directory] *********************************************************************************************************************
+Sunday 08 May 2022  21:46:26 +0700 (0:00:00.152)       0:09:49.416 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/cni : CNI | make sure /opt/cni/bin exists] ***************************************************************************************************************************
+Sunday 08 May 2022  21:46:27 +0700 (0:00:00.220)       0:09:49.636 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/cni : CNI | Copy cni plugins] ****************************************************************************************************************************************
+Sunday 08 May 2022  21:46:27 +0700 (0:00:00.157)       0:09:49.794 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/cni : CNI | make sure /opt/cni/bin exists] ***************************************************************************************************************************
+Sunday 08 May 2022  21:46:27 +0700 (0:00:00.298)       0:09:50.093 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/cni : CNI | Copy cni plugins] ****************************************************************************************************************************************
+Sunday 08 May 2022  21:46:27 +0700 (0:00:00.143)       0:09:50.237 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/macvlan : Macvlan | Retrieve Pod Cidr] *******************************************************************************************************************************
+Sunday 08 May 2022  21:46:28 +0700 (0:00:00.237)       0:09:50.474 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/macvlan : Macvlan | set node_pod_cidr] *******************************************************************************************************************************
+Sunday 08 May 2022  21:46:28 +0700 (0:00:00.219)       0:09:50.694 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/macvlan : Macvlan | Retrieve default gateway network interface] ******************************************************************************************************
+Sunday 08 May 2022  21:46:28 +0700 (0:00:00.148)       0:09:50.842 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/macvlan : Macvlan | set node_default_gateway_interface] **************************************************************************************************************
+Sunday 08 May 2022  21:46:28 +0700 (0:00:00.139)       0:09:50.981 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/macvlan : Macvlan | Install network gateway interface on debian] *****************************************************************************************************
+Sunday 08 May 2022  21:46:28 +0700 (0:00:00.147)       0:09:51.128 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/macvlan : Macvlan | Install macvlan script on centos] ****************************************************************************************************************
+Sunday 08 May 2022  21:46:28 +0700 (0:00:00.141)       0:09:51.270 ************ 
+skipping: [node1] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifdown-macvlan) 
+skipping: [node1] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifup-local) 
+skipping: [node1] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifup-macvlan) 
+skipping: [node1] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifdown-local) 
+skipping: [node2] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifdown-macvlan) 
+skipping: [node2] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifup-local) 
+skipping: [node2] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifup-macvlan) 
+skipping: [node2] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifdown-local) 
+skipping: [node3] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifdown-macvlan) 
+skipping: [node3] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifup-local) 
+skipping: [node3] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifup-macvlan) 
+skipping: [node3] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifdown-local) 
+skipping: [node4] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifdown-macvlan) 
+skipping: [node4] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifup-local) 
+skipping: [node4] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifup-macvlan) 
+skipping: [node4] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifdown-local) 
+skipping: [node5] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifdown-macvlan) 
+skipping: [node5] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifup-local) 
+skipping: [node5] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifup-macvlan) 
+skipping: [node5] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifdown-local) 
+skipping: [node6] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifdown-macvlan) 
+skipping: [node6] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifup-local) 
+skipping: [node6] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifup-macvlan) 
+skipping: [node6] => (item=/root/ver4/kubespray/roles/network_plugin/macvlan/files/ifdown-local) 
+
+TASK [network_plugin/macvlan : Macvlan | Install post-up script on centos] ****************************************************************************************************************
+Sunday 08 May 2022  21:46:29 +0700 (0:00:00.202)       0:09:51.472 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/macvlan : Macvlan | Install network gateway interface on centos] *****************************************************************************************************
+Sunday 08 May 2022  21:46:29 +0700 (0:00:00.146)       0:09:51.618 ************ 
+skipping: [node1] => (item={'src': 'centos-network-macvlan.cfg', 'dst': 'ifcfg-mac0'}) 
+skipping: [node1] => (item={'src': 'centos-routes-macvlan.cfg', 'dst': 'route-mac0'}) 
+skipping: [node1] => (item={'src': 'centos-postup-macvlan.cfg', 'dst': 'post-up-mac0'}) 
+skipping: [node2] => (item={'src': 'centos-network-macvlan.cfg', 'dst': 'ifcfg-mac0'}) 
+skipping: [node2] => (item={'src': 'centos-routes-macvlan.cfg', 'dst': 'route-mac0'}) 
+skipping: [node2] => (item={'src': 'centos-postup-macvlan.cfg', 'dst': 'post-up-mac0'}) 
+skipping: [node3] => (item={'src': 'centos-network-macvlan.cfg', 'dst': 'ifcfg-mac0'}) 
+skipping: [node3] => (item={'src': 'centos-routes-macvlan.cfg', 'dst': 'route-mac0'}) 
+skipping: [node3] => (item={'src': 'centos-postup-macvlan.cfg', 'dst': 'post-up-mac0'}) 
+skipping: [node4] => (item={'src': 'centos-network-macvlan.cfg', 'dst': 'ifcfg-mac0'}) 
+skipping: [node4] => (item={'src': 'centos-routes-macvlan.cfg', 'dst': 'route-mac0'}) 
+skipping: [node4] => (item={'src': 'centos-postup-macvlan.cfg', 'dst': 'post-up-mac0'}) 
+skipping: [node5] => (item={'src': 'centos-network-macvlan.cfg', 'dst': 'ifcfg-mac0'}) 
+skipping: [node5] => (item={'src': 'centos-routes-macvlan.cfg', 'dst': 'route-mac0'}) 
+skipping: [node5] => (item={'src': 'centos-postup-macvlan.cfg', 'dst': 'post-up-mac0'}) 
+skipping: [node6] => (item={'src': 'centos-network-macvlan.cfg', 'dst': 'ifcfg-mac0'}) 
+skipping: [node6] => (item={'src': 'centos-routes-macvlan.cfg', 'dst': 'route-mac0'}) 
+skipping: [node6] => (item={'src': 'centos-postup-macvlan.cfg', 'dst': 'post-up-mac0'}) 
+
+TASK [network_plugin/macvlan : Macvlan | Install service nat via gateway on Flatcar Container Linux] **************************************************************************************
+Sunday 08 May 2022  21:46:29 +0700 (0:00:00.193)       0:09:51.812 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/macvlan : Macvlan | Enable service nat via gateway on Flatcar Container Linux] ***************************************************************************************
+Sunday 08 May 2022  21:46:29 +0700 (0:00:00.151)       0:09:51.963 ************ 
+skipping: [node1] => (item=systemctl daemon-reload) 
+skipping: [node1] => (item=systemctl enable enable_nat_ouside.service) 
+skipping: [node2] => (item=systemctl daemon-reload) 
+skipping: [node2] => (item=systemctl enable enable_nat_ouside.service) 
+skipping: [node3] => (item=systemctl daemon-reload) 
+skipping: [node3] => (item=systemctl enable enable_nat_ouside.service) 
+skipping: [node4] => (item=systemctl daemon-reload) 
+skipping: [node4] => (item=systemctl enable enable_nat_ouside.service) 
+skipping: [node5] => (item=systemctl daemon-reload) 
+skipping: [node5] => (item=systemctl enable enable_nat_ouside.service) 
+skipping: [node6] => (item=systemctl daemon-reload) 
+skipping: [node6] => (item=systemctl enable enable_nat_ouside.service) 
+
+TASK [network_plugin/macvlan : Macvlan | Install network gateway interface on Flatcar Container Linux] ************************************************************************************
+Sunday 08 May 2022  21:46:29 +0700 (0:00:00.181)       0:09:52.145 ************ 
+skipping: [node1] => (item={'src': 'coreos-device-macvlan.cfg', 'dst': 'macvlan.netdev'}) 
+skipping: [node1] => (item={'src': 'coreos-interface-macvlan.cfg', 'dst': 'output.network'}) 
+skipping: [node1] => (item={'src': 'coreos-network-macvlan.cfg', 'dst': 'macvlan.network'}) 
+skipping: [node2] => (item={'src': 'coreos-device-macvlan.cfg', 'dst': 'macvlan.netdev'}) 
+skipping: [node2] => (item={'src': 'coreos-interface-macvlan.cfg', 'dst': 'output.network'}) 
+skipping: [node2] => (item={'src': 'coreos-network-macvlan.cfg', 'dst': 'macvlan.network'}) 
+skipping: [node3] => (item={'src': 'coreos-device-macvlan.cfg', 'dst': 'macvlan.netdev'}) 
+skipping: [node3] => (item={'src': 'coreos-interface-macvlan.cfg', 'dst': 'output.network'}) 
+skipping: [node3] => (item={'src': 'coreos-network-macvlan.cfg', 'dst': 'macvlan.network'}) 
+skipping: [node4] => (item={'src': 'coreos-device-macvlan.cfg', 'dst': 'macvlan.netdev'}) 
+skipping: [node4] => (item={'src': 'coreos-interface-macvlan.cfg', 'dst': 'output.network'}) 
+skipping: [node4] => (item={'src': 'coreos-network-macvlan.cfg', 'dst': 'macvlan.network'}) 
+skipping: [node5] => (item={'src': 'coreos-device-macvlan.cfg', 'dst': 'macvlan.netdev'}) 
+skipping: [node5] => (item={'src': 'coreos-interface-macvlan.cfg', 'dst': 'output.network'}) 
+skipping: [node5] => (item={'src': 'coreos-network-macvlan.cfg', 'dst': 'macvlan.network'}) 
+skipping: [node6] => (item={'src': 'coreos-device-macvlan.cfg', 'dst': 'macvlan.netdev'}) 
+skipping: [node6] => (item={'src': 'coreos-interface-macvlan.cfg', 'dst': 'output.network'}) 
+skipping: [node6] => (item={'src': 'coreos-network-macvlan.cfg', 'dst': 'macvlan.network'}) 
+
+TASK [network_plugin/macvlan : Macvlan | Install cni definition for Macvlan] **************************************************************************************************************
+Sunday 08 May 2022  21:46:29 +0700 (0:00:00.202)       0:09:52.347 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/macvlan : Macvlan | Install loopback definition for Macvlan] *********************************************************************************************************
+Sunday 08 May 2022  21:46:30 +0700 (0:00:00.159)       0:09:52.506 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/macvlan : Enable net.ipv4.conf.all.arp_notify in sysctl] *************************************************************************************************************
+Sunday 08 May 2022  21:46:30 +0700 (0:00:00.152)       0:09:52.659 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/kube-ovn : Kube-OVN | Label ovn-db node] *****************************************************************************************************************************
+Sunday 08 May 2022  21:46:30 +0700 (0:00:00.227)       0:09:52.886 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/kube-ovn : Kube-OVN | Create Kube-OVN manifests] *********************************************************************************************************************
+Sunday 08 May 2022  21:46:30 +0700 (0:00:00.172)       0:09:53.059 ************ 
+skipping: [node1] => (item={'name': 'kube-ovn-crd', 'file': 'cni-kube-ovn-crd.yml'}) 
+skipping: [node1] => (item={'name': 'ovn', 'file': 'cni-ovn.yml'}) 
+skipping: [node1] => (item={'name': 'kube-ovn', 'file': 'cni-kube-ovn.yml'}) 
+skipping: [node2] => (item={'name': 'kube-ovn-crd', 'file': 'cni-kube-ovn-crd.yml'}) 
+skipping: [node2] => (item={'name': 'ovn', 'file': 'cni-ovn.yml'}) 
+skipping: [node2] => (item={'name': 'kube-ovn', 'file': 'cni-kube-ovn.yml'}) 
+skipping: [node3] => (item={'name': 'kube-ovn-crd', 'file': 'cni-kube-ovn-crd.yml'}) 
+skipping: [node3] => (item={'name': 'ovn', 'file': 'cni-ovn.yml'}) 
+skipping: [node3] => (item={'name': 'kube-ovn', 'file': 'cni-kube-ovn.yml'}) 
+skipping: [node4] => (item={'name': 'kube-ovn-crd', 'file': 'cni-kube-ovn-crd.yml'}) 
+skipping: [node4] => (item={'name': 'ovn', 'file': 'cni-ovn.yml'}) 
+skipping: [node4] => (item={'name': 'kube-ovn', 'file': 'cni-kube-ovn.yml'}) 
+skipping: [node5] => (item={'name': 'kube-ovn-crd', 'file': 'cni-kube-ovn-crd.yml'}) 
+skipping: [node5] => (item={'name': 'ovn', 'file': 'cni-ovn.yml'}) 
+skipping: [node5] => (item={'name': 'kube-ovn', 'file': 'cni-kube-ovn.yml'}) 
+skipping: [node6] => (item={'name': 'kube-ovn-crd', 'file': 'cni-kube-ovn-crd.yml'}) 
+skipping: [node6] => (item={'name': 'ovn', 'file': 'cni-ovn.yml'}) 
+skipping: [node6] => (item={'name': 'kube-ovn', 'file': 'cni-kube-ovn.yml'}) 
+
+TASK [network_plugin/cni : CNI | make sure /opt/cni/bin exists] ***************************************************************************************************************************
+Sunday 08 May 2022  21:46:30 +0700 (0:00:00.286)       0:09:53.346 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/cni : CNI | Copy cni plugins] ****************************************************************************************************************************************
+Sunday 08 May 2022  21:46:31 +0700 (0:00:00.149)       0:09:53.496 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/kube-router : kube-router | Add annotations on kube_control_plane] ***************************************************************************************************
+Sunday 08 May 2022  21:46:31 +0700 (0:00:00.229)       0:09:53.725 ************ 
+
+TASK [network_plugin/kube-router : kube-router | Add annotations on kube_node] ************************************************************************************************************
+Sunday 08 May 2022  21:46:31 +0700 (0:00:00.235)       0:09:53.961 ************ 
+
+TASK [network_plugin/kube-router : kube-router | Add common annotations on all servers] ***************************************************************************************************
+Sunday 08 May 2022  21:46:31 +0700 (0:00:00.145)       0:09:54.107 ************ 
+
+TASK [network_plugin/kube-router : kube-router | Create config directory] *****************************************************************************************************************
+Sunday 08 May 2022  21:46:31 +0700 (0:00:00.158)       0:09:54.265 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/kube-router : kube-router | Create kubeconfig] ***********************************************************************************************************************
+Sunday 08 May 2022  21:46:31 +0700 (0:00:00.157)       0:09:54.423 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/kube-router : kube-router | Slurp cni config] ************************************************************************************************************************
+Sunday 08 May 2022  21:46:32 +0700 (0:00:00.162)       0:09:54.585 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/kube-router : kube-router | Set cni_config variable] *****************************************************************************************************************
+Sunday 08 May 2022  21:46:32 +0700 (0:00:00.150)       0:09:54.736 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/kube-router : kube-router | Set host_subnet variable] ****************************************************************************************************************
+Sunday 08 May 2022  21:46:32 +0700 (0:00:00.167)       0:09:54.904 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/kube-router : kube-router | Create cni config] ***********************************************************************************************************************
+Sunday 08 May 2022  21:46:32 +0700 (0:00:00.152)       0:09:55.056 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/kube-router : kube-router | Delete old configuration] ****************************************************************************************************************
+Sunday 08 May 2022  21:46:32 +0700 (0:00:00.155)       0:09:55.212 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/kube-router : kube-router | Create manifest] *************************************************************************************************************************
+Sunday 08 May 2022  21:46:32 +0700 (0:00:00.171)       0:09:55.384 ************ 
+skipping: [node1]
+
+TASK [network_plugin/cni : CNI | make sure /opt/cni/bin exists] ***************************************************************************************************************************
+Sunday 08 May 2022  21:46:33 +0700 (0:00:00.114)       0:09:55.498 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/cni : CNI | Copy cni plugins] ****************************************************************************************************************************************
+Sunday 08 May 2022  21:46:33 +0700 (0:00:00.160)       0:09:55.659 ************ 
+skipping: [node1]
+skipping: [node2]
+skipping: [node3]
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+TASK [network_plugin/multus : Multus | Copy manifest files] *******************************************************************************************************************************
+Sunday 08 May 2022  21:46:33 +0700 (0:00:00.229)       0:09:55.889 ************ 
+skipping: [node1] => (item={'name': 'multus-crd', 'file': 'multus-crd.yml', 'type': 'customresourcedefinition'}) 
+skipping: [node1] => (item={'name': 'multus-serviceaccount', 'file': 'multus-serviceaccount.yml', 'type': 'serviceaccount'}) 
+skipping: [node1] => (item={'name': 'multus-clusterrole', 'file': 'multus-clusterrole.yml', 'type': 'clusterrole'}) 
+skipping: [node1] => (item={'name': 'multus-clusterrolebinding', 'file': 'multus-clusterrolebinding.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node2] => (item={'name': 'multus-crd', 'file': 'multus-crd.yml', 'type': 'customresourcedefinition'}) 
+skipping: [node2] => (item={'name': 'multus-serviceaccount', 'file': 'multus-serviceaccount.yml', 'type': 'serviceaccount'}) 
+skipping: [node2] => (item={'name': 'multus-clusterrole', 'file': 'multus-clusterrole.yml', 'type': 'clusterrole'}) 
+skipping: [node2] => (item={'name': 'multus-clusterrolebinding', 'file': 'multus-clusterrolebinding.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node3] => (item={'name': 'multus-crd', 'file': 'multus-crd.yml', 'type': 'customresourcedefinition'}) 
+skipping: [node3] => (item={'name': 'multus-serviceaccount', 'file': 'multus-serviceaccount.yml', 'type': 'serviceaccount'}) 
+skipping: [node3] => (item={'name': 'multus-clusterrole', 'file': 'multus-clusterrole.yml', 'type': 'clusterrole'}) 
+skipping: [node3] => (item={'name': 'multus-clusterrolebinding', 'file': 'multus-clusterrolebinding.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node4] => (item={'name': 'multus-crd', 'file': 'multus-crd.yml', 'type': 'customresourcedefinition'}) 
+skipping: [node4] => (item={'name': 'multus-serviceaccount', 'file': 'multus-serviceaccount.yml', 'type': 'serviceaccount'}) 
+skipping: [node4] => (item={'name': 'multus-clusterrole', 'file': 'multus-clusterrole.yml', 'type': 'clusterrole'}) 
+skipping: [node4] => (item={'name': 'multus-clusterrolebinding', 'file': 'multus-clusterrolebinding.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node5] => (item={'name': 'multus-crd', 'file': 'multus-crd.yml', 'type': 'customresourcedefinition'}) 
+skipping: [node5] => (item={'name': 'multus-serviceaccount', 'file': 'multus-serviceaccount.yml', 'type': 'serviceaccount'}) 
+skipping: [node5] => (item={'name': 'multus-clusterrole', 'file': 'multus-clusterrole.yml', 'type': 'clusterrole'}) 
+skipping: [node5] => (item={'name': 'multus-clusterrolebinding', 'file': 'multus-clusterrolebinding.yml', 'type': 'clusterrolebinding'}) 
+skipping: [node6] => (item={'name': 'multus-crd', 'file': 'multus-crd.yml', 'type': 'customresourcedefinition'}) 
+skipping: [node6] => (item={'name': 'multus-serviceaccount', 'file': 'multus-serviceaccount.yml', 'type': 'serviceaccount'}) 
+skipping: [node6] => (item={'name': 'multus-clusterrole', 'file': 'multus-clusterrole.yml', 'type': 'clusterrole'}) 
+skipping: [node6] => (item={'name': 'multus-clusterrolebinding', 'file': 'multus-clusterrolebinding.yml', 'type': 'clusterrolebinding'}) 
+
+TASK [network_plugin/multus : Multus | Copy manifest templates] ***************************************************************************************************************************
+Sunday 08 May 2022  21:46:33 +0700 (0:00:00.202)       0:09:56.091 ************ 
+skipping: [node1] => (item={'name': 'multus-daemonset', 'file': 'multus-daemonset.yml', 'type': 'daemonset'}) 
+skipping: [node2] => (item={'name': 'multus-daemonset', 'file': 'multus-daemonset.yml', 'type': 'daemonset'}) 
+skipping: [node3] => (item={'name': 'multus-daemonset', 'file': 'multus-daemonset.yml', 'type': 'daemonset'}) 
+skipping: [node4] => (item={'name': 'multus-daemonset', 'file': 'multus-daemonset.yml', 'type': 'daemonset'}) 
+skipping: [node5] => (item={'name': 'multus-daemonset', 'file': 'multus-daemonset.yml', 'type': 'daemonset'}) 
+skipping: [node6] => (item={'name': 'multus-daemonset', 'file': 'multus-daemonset.yml', 'type': 'daemonset'}) 
+
+RUNNING HANDLER [kubernetes/node : Kubelet | restart kubelet] *****************************************************************************************************************************
+Sunday 08 May 2022  21:46:33 +0700 (0:00:00.307)       0:09:56.399 ************ 
+changed: [node5]
+changed: [node4]
+changed: [node6]
+
+RUNNING HANDLER [kubernetes/kubeadm : Kubeadm | restart kubelet] **************************************************************************************************************************
+Sunday 08 May 2022  21:46:34 +0700 (0:00:00.635)       0:09:57.034 ************ 
+changed: [node4]
+changed: [node5]
+changed: [node6]
+
+RUNNING HANDLER [kubernetes/kubeadm : Kubeadm | reload systemd] ***************************************************************************************************************************
+Sunday 08 May 2022  21:46:34 +0700 (0:00:00.408)       0:09:57.442 ************ 
+ok: [node4]
+ok: [node5]
+ok: [node6]
+
+RUNNING HANDLER [kubernetes/kubeadm : Kubeadm | reload kubelet] ***************************************************************************************************************************
+Sunday 08 May 2022  21:46:35 +0700 (0:00:00.732)       0:09:58.174 ************ 
+changed: [node5]
+changed: [node4]
+changed: [node6]
+
+RUNNING HANDLER [network_plugin/calico : reset_calico_cni] ********************************************************************************************************************************
+Sunday 08 May 2022  21:46:39 +0700 (0:00:04.040)       0:10:02.215 ************ 
+skipping: [node4]
+skipping: [node5]
+skipping: [node6]
+
+PLAY RECAP ********************************************************************************************************************************************************************************
+node1                      : ok=246  changed=4    unreachable=0    failed=0    skipped=508  rescued=0    ignored=1   
+node2                      : ok=174  changed=2    unreachable=0    failed=0    skipped=378  rescued=0    ignored=0   
+node3                      : ok=175  changed=2    unreachable=0    failed=0    skipped=377  rescued=0    ignored=1   
+node4                      : ok=182  changed=35   unreachable=0    failed=0    skipped=378  rescued=1    ignored=1   
+node5                      : ok=182  changed=35   unreachable=0    failed=0    skipped=378  rescued=1    ignored=1   
+node6                      : ok=182  changed=35   unreachable=0    failed=0    skipped=378  rescued=1    ignored=1   
+
+Sunday 08 May 2022  21:46:39 +0700 (0:00:00.099)       0:10:02.314 ************ 
+=============================================================================== 
+network_plugin/calico : Wait for calico kubeconfig to be created ----------------------------------------------------------------------------------------------------------------- 282.93s
+download : download_file | Copy file from cache to nodes, if it is available ------------------------------------------------------------------------------------------------------- 9.83s
+container-engine/crictl : extract_file | Unpacking archive ------------------------------------------------------------------------------------------------------------------------- 7.25s
+kubernetes/kubeadm : Join to cluster with ignores ---------------------------------------------------------------------------------------------------------------------------------- 6.69s
+container-engine/crictl : download_file | Download item ---------------------------------------------------------------------------------------------------------------------------- 6.22s
+download : download | Download files / images -------------------------------------------------------------------------------------------------------------------------------------- 5.17s
+download : download_file | Copy file from cache to nodes, if it is available ------------------------------------------------------------------------------------------------------- 5.16s
+download : download_file | Copy file from cache to nodes, if it is available ------------------------------------------------------------------------------------------------------- 4.51s
+kubernetes/kubeadm : Kubeadm | reload kubelet -------------------------------------------------------------------------------------------------------------------------------------- 4.04s
+download : download_file | Copy file from cache to nodes, if it is available ------------------------------------------------------------------------------------------------------- 3.71s
+kubernetes/preinstall : Ensure kube-bench parameters are set ----------------------------------------------------------------------------------------------------------------------- 3.64s
+container-engine/validate-container-engine : Populate service facts ---------------------------------------------------------------------------------------------------------------- 3.62s
+network_plugin/calico : Calico | Create calico manifests --------------------------------------------------------------------------------------------------------------------------- 3.59s
+download : download | Download files / images -------------------------------------------------------------------------------------------------------------------------------------- 3.48s
+kubernetes/preinstall : Create kubernetes directories ------------------------------------------------------------------------------------------------------------------------------ 3.20s
+network_plugin/calico : Start Calico resources ------------------------------------------------------------------------------------------------------------------------------------- 3.04s
+download : download | Download files / images -------------------------------------------------------------------------------------------------------------------------------------- 2.98s
+download : extract_file | Unpacking archive ---------------------------------------------------------------------------------------------------------------------------------------- 2.88s
+container-engine/crictl : download_file | Create dest directory on node ------------------------------------------------------------------------------------------------------------ 2.61s
+kubernetes/node : Modprobe Kernel Module for IPVS ---------------------------------------------------------------------------------------------------------------------------------- 2.49s
+root@host2:~/ver4/kubespray# 
